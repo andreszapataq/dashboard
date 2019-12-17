@@ -49,13 +49,41 @@ body {
 }
 
 .sidenav {
-    display: none;
     grid-area: sidenav;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    overflow-y: auto;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    z-index: 2;
     background-color: #394263;
+    transform: translateX(-245px);
+    transition: all .6s ease-in-out;
+    
+    /* display: none;
+    grid-area: sidenav;
+    background-color: #394263; */
+
     /* display: flex;
     flex-direction: column;
     grid-area: sidenav;
     background-color: #394263; */
+}
+
+.sidenav.active {
+    transform: translateX(0);
+}
+
+.sidenav_close-icon {
+    position: absolute;
+    visibility: visible;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ddd;
 }
 
 .sidenav_list {
@@ -157,8 +185,14 @@ body {
     }
 
     .sidenav {
-        display: flex;
-        flex-direction: column;
+        position: relative;
+        transform: translateX(0);
+        /* display: flex;
+        flex-direction: column; */
+    }
+
+    .sidenav_close-icon {
+        visibility: hidden;
     }
 }
 

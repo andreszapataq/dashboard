@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modern Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -62,5 +64,28 @@
             <div class="footer_signature">Made with Love by Ing. Andres Z</div>
         </footer>
     </div>
+    <script src="https://kit.fontawesome.com/2a43ae7282.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        const menuIconEl = $('.menu-icon');
+        const sidenavEl = $('.sidenav');
+        const sidenavCloseEl = $('.sidenav_close-icon');
+
+        function toggleClassName(el, className) {
+            if(el.hasClass(className)) {
+                el.removeClass(className);
+            } else {
+                el.addClass(className);
+            }
+        }
+
+        menuIconEl.on('click', function() {
+            toggleClassName(sidenavEl, 'active');
+        });
+
+        sidenavCloseEl.on('click', function() {
+            toggleClassName(sidenavEl, 'active');
+        });
+    </script>
 </body>
 </html>
